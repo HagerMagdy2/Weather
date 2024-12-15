@@ -2,14 +2,14 @@
   <input type="text" [(ngModel)]="searchQuery" placeholder="Search for a city" />
   <button (click)="onSearch()">Search</button>
 
-  <!-- <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div> -->
+  <div *ngIf="errorMessage" class="error-message" style="margin-left: 150px;">{{ errorMessage }}</div>
 
 </div>
 
-  <div *ngIf="cityWeather" class="city-card">
-    <h2>{{ cityWeather.city }}</h2>
-    <p>Date: {{ cityWeather.forecast[0].date }}</p>
-    <p>Temperature: {{ cityWeather.forecast[0].temperatureCelsius }} °C</p>
-    <p>Humidity: {{ cityWeather.forecast[0].humidity }} %</p>
-   
+<div *ngIf="cityWeather">
+  <h3>Weather in {{ cityWeather.name }}</h3>
+  <p>Temperature: {{ cityWeather.main.temp }} °C</p>
+  <p>Weather: {{ cityWeather.weather[0].description }}</p>
+  <p>Humidity: {{ cityWeather.main.humidity }}%</p>
+  <p>Wind Speed: {{ cityWeather.wind.speed }} m/s</p>
 </div>

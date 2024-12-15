@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, Observable, throwError } from 'rxjs';
+import { catchError, map, Observable, throwError } from 'rxjs';
 import { CityWeather } from '../models/icityWeather';
 import { environment } from '../environments/environment.development';
 
@@ -26,14 +26,21 @@ export class ApiWeatherService {
       getCityWeather(cityId: string): Observable<any> {
         return this.httpClient.get<any>(`${environment.baseUrl}/cityForecast/${cityId}`);
       }
-      getCityIdByName(cityName: string): Observable<number> {
-        // Make a request to get the city ID from the city name
-        let searchString= new HttpParams()
-        searchString=searchString.append("cityName",cityName)
-      searchString=  searchString.append("limits",5)
-        return this.httpClient.get<number>(`$${environment.baseUrl}/forcast`,{
-          params:searchString
-        })
+      getCityWeatherByName(cityName: string): Observable<any | undefined> {
+        return this.getAllCitiesWeather().pipe(
+          map((citiesWeather: any[]) => {
+          //  console.log('All cities:', citiesWeather); 
+            console.log('Searching for:', cityName); 
+      
+            const foundCity = citiesWeather.find(city => 
+              city.name && 
+              city.name.toLowerCase().trim() === cityName.toLowerCase().trim()
+            );
+      
+            console.log('Found city:', foundCity);
+            return foundCity;
+          })
+        );
       }
       getCityWeatherByDate(date: Date): Observable<any> {
         let searchString = new HttpParams();

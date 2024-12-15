@@ -5,11 +5,12 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RainChanceComponent } from './components/rain-chance/rain-chance.component';
 import { SidebarComponent } from "./components/sidebar/sidebar.component";
+import { SearchComponent } from './components/search/search.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ FormsModule, CommonModule, RainChanceComponent, SidebarComponent],
+  imports: [ FormsModule, CommonModule, RainChanceComponent, SidebarComponent,SearchComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
