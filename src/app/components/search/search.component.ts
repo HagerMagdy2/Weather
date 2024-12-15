@@ -22,8 +22,6 @@ export class SearchComponent {
       this.errorMessage = 'Please enter a valid city name';
       return;
     }
-
-    // Remove any unnecessary URL encoding for spaces in city names like "New York"
     const formattedCityName = this.searchQuery.trim().toLowerCase().replace(/\s+/g, '%20');
 
 

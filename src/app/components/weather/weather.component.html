@@ -4,12 +4,18 @@
     <div class="carousel-item active">
       <div class="d-flex justify-content-between align-items-center px-5 gradient-custom" style="height: 200px ; width: 800px;">
         <div>
-          <h2 class="text-dark display-2"><strong>{{22}}°C</strong></h2>
+          <h2 class="text-dark display-2"><strong>{{ 77| temperatureConvertion:unit| number:'1.1'}}{{unit}}</strong></h2>
           <h1 class="text-dark mb-0">{{cityWeather?.city}}</h1>
         </div>
         <div>
           <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/ilu3.webp"
             width="150px">
+            <div>
+              <button (click)="convertToFahrenheit(77)" style="height: 35px; width: 170px; margin-top: 20px;">
+                Show in {{ !isCelsius ? 'Fahrenheit' : 'Celsius' }}
+              </button>
+            </div>
+            
         </div>
       </div>
     </div>
