@@ -1,0 +1,13 @@
+<!-- weather.component.html -->
+<div class="weather-card">
+  <h3>{{ city }}</h3>
+  <div class="weather-info">
+    <img [src]="weatherIcon" alt="Weather Icon">
+    <div class="weather-details">
+      <span class="temperature">{{ temperature }}°C</span>
+      <span class="humidity">Humidity: {{ humidity }}%</span>
+      <span class="wind-speed">Wind: {{ windSpeed }} m/s</span>
+      <span class="weather-description">{{ weatherDescription }}</span>
+    </div>
+  </div>
+</div>

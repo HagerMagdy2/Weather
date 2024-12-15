@@ -1,0 +1,16 @@
+<div class="weather-cards-container">
+  <div class="search-container">
+    <input type="date" [(ngModel)]="selectedDate" />
+    <button (click)="searchWeatherByDate()" >Search</button>
+  </div>
+
+  <div class="weather-card" *ngFor="let day of weatherData">
+    <div class="day-name">{{ day.dt_txt | date:'EEE, MMM d' }}</div>
+    <div class="weather-icon">
+      <img [src]="'assets/icons/' + day.weather[0].icon + '.png'" [alt]="day.weather[0].description">
+    </div>
+    <div class="temperature">{{ day.main.temp }}°C</div>
+    <div class="precipitation-chance">{{ day.pop * 100 }}%</div>
+    <div class="wind-speed">{{ day.wind.speed }} m/s</div>
+  </div>
+</div>

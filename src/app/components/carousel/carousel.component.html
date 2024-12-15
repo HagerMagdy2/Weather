@@ -1,0 +1,17 @@
+<h2 class=" m-5" style="color: #000; font-size: large;">Other Large Cities</h2>
+<div id="weatherCarousel" *ngFor="let city of citiesWeather" class="carousel slide m-5" style="width: 350px;" data-mdb-ride="carousel" data-mdb-carousel-init>
+
+  <div class="carousel-inner rounded-5 " >
+    <div class="carousel-item active">
+      <div class="d-flex justify-content-between align-items-center px-5 gradient-custom" style="height: 100px;">
+        <div >
+          
+          <h6 class="text-dark display-2" style="font-size: 30px; font-weight: 400;">{{city.city}} </h6>
+        </div>
+        <div>
+          <h6 class="text-dark display-2"><strong style="font-size: 40px; font-weight: 400;">{{ city.forecast[0].temperatureCelsius}}°C</strong></h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

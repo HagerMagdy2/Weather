@@ -1,0 +1,16 @@
+<div id="weatherCarousel" class="carousel slide m-5" data-mdb-ride="carousel" data-mdb-carousel-init>
+  <div class="carousel-inner rounded-5">
+  
+  
+    <div class="carousel-item active">
+      <div class="d-flex justify-content-around text-center align-items-center gradient-custom px-5 bg-body-tertiary"
+        style="height: 230px ; width: 900px;" >
+        <div class="flex-column" *ngFor="let city of cityWeather?.forecast">
+          <p class="small"><strong>{{city.temperatureCelsius}}°C</strong></p>
+          <i class="fas fa-sun fa-2x mb-3" style="color: #ddd;"></i>
+          <p class="mb-0"><strong>{{city.date| weekday}}</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

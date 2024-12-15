@@ -1,0 +1,27 @@
+.container{
+  margin-top: 50px;
+}
+.chart{
+  margin-top: 30px;
+  margin-left: 50px;
+}
+.button{
+  margin-top: 40px;
+  width: 50%;
+  align-items:end ;
+  margin-left: 740px;
+}
+.card{
+  /* margin-left: 50px; */
+  border: none;
+}
+.center{
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+
+}
+.containerList{
+  width: 500px;
+  /* height: 50%; */
+}
